@@ -169,6 +169,66 @@ footer{
 }
 
 .hidden{display:none}
+
+/* Footer centrado */
+.cinematic-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background: #000;
+}
+
+/* Estilo base de las líneas */
+.footer-line {
+  color: #00ff88;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+  text-shadow: 0 0 8px #00ff88, 0 0 15px #00ff88, 0 0 20px #00ff88;
+  margin: 5px 0;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+/* Glow animado continuo */
+@keyframes footerGlow {
+  0% { text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88; }
+  50% { text-shadow: 0 0 15px #00ff88, 0 0 30px #00ff88, 0 0 40px #00ff88; }
+  100% { text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88; }
+}
+.footer-line { animation: footerGlow 3s ease-in-out infinite alternate; }
+
+/* Animaciones random predefinidas */
+@keyframes moveUp { 0%{transform:translateY(0)}50%{transform:translateY(-5px)}100%{transform:translateY(0)} }
+@keyframes moveDown { 0%{transform:translateY(0)}50%{transform:translateY(5px)}100%{transform:translateY(0)} }
+@keyframes rotateLeft { 0%{transform:rotate(0deg)}50%{transform:rotate(-3deg)}100%{transform:rotate(0deg)} }
+@keyframes rotateRight { 0%{transform:rotate(0deg)}50%{transform:rotate(3deg)}100%{transform:rotate(0deg)} }
+@keyframes scaleUp { 0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)} }
+@keyframes scaleDown { 0%{transform:scale(1)}50%{transform:scale(0.9)}100%{transform:scale(1)} }
+@keyframes blinkText { 0%,100%{opacity:1}50%{opacity:0.2} }
+
+/* Animación spin + color para Developer */
+@keyframes spinColor {
+  0%   { transform: rotate(0deg); color: #00ff88; }
+  25%  { transform: rotate(90deg); color: #ff00ff; }
+  50%  { transform: rotate(180deg); color: #00ffff; }
+  75%  { transform: rotate(270deg); color: #ffff00; }
+  100% { transform: rotate(360deg); color: #00ff88; }
+}
+
+/* Animación camaleón por letra */
+@keyframes camaleon {
+  0%,100% { transform: translateY(0); color:#00ff88; }
+  25% { transform: translateY(-6px); color:#ff00ff; }
+  50% { transform: translateY(6px); color:#00ffff; }
+  75% { transform: translateY(-3px); color:#ffff00; }
+}
+.footer-line span { display:inline-block; transition: all 0.3s ease; }
+
 </style>
 </head>
 
@@ -256,67 +316,6 @@ footer{
   <p class="footer-line" id="camaleon-line">Protected by DMCA.com and international copyright laws</p>
 </footer>
 
-<style>
-/* Footer centrado */
-.cinematic-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 50px 20px;
-  background: #000;
-}
-
-/* Estilo base de las líneas */
-.footer-line {
-  color: #00ff88;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  text-align: center;
-  text-shadow: 0 0 8px #00ff88, 0 0 15px #00ff88, 0 0 20px #00ff88;
-  margin: 5px 0;
-  cursor: pointer;
-  display: inline-block;
-  transition: all 0.3s ease;
-}
-
-/* Glow animado continuo */
-@keyframes footerGlow {
-  0% { text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88; }
-  50% { text-shadow: 0 0 15px #00ff88, 0 0 30px #00ff88, 0 0 40px #00ff88; }
-  100% { text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88; }
-}
-.footer-line { animation: footerGlow 3s ease-in-out infinite alternate; }
-
-/* Animaciones random predefinidas */
-@keyframes moveUp { 0%{transform:translateY(0)}50%{transform:translateY(-5px)}100%{transform:translateY(0)} }
-@keyframes moveDown { 0%{transform:translateY(0)}50%{transform:translateY(5px)}100%{transform:translateY(0)} }
-@keyframes rotateLeft { 0%{transform:rotate(0deg)}50%{transform:rotate(-3deg)}100%{transform:rotate(0deg)} }
-@keyframes rotateRight { 0%{transform:rotate(0deg)}50%{transform:rotate(3deg)}100%{transform:rotate(0deg)} }
-@keyframes scaleUp { 0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)} }
-@keyframes scaleDown { 0%{transform:scale(1)}50%{transform:scale(0.9)}100%{transform:scale(1)} }
-@keyframes blinkText { 0%,100%{opacity:1}50%{opacity:0.2} }
-
-/* Animación spin + color para Developer */
-@keyframes spinColor {
-  0%   { transform: rotate(0deg); color: #00ff88; }
-  25%  { transform: rotate(90deg); color: #ff00ff; }
-  50%  { transform: rotate(180deg); color: #00ffff; }
-  75%  { transform: rotate(270deg); color: #ffff00; }
-  100% { transform: rotate(360deg); color: #00ff88; }
-}
-
-/* Animación camaleón por letra */
-@keyframes camaleon {
-  0%,100% { transform: translateY(0); color:#00ff88; }
-  25% { transform: translateY(-6px); color:#ff00ff; }
-  50% { transform: translateY(6px); color:#00ffff; }
-  75% { transform: translateY(-3px); color:#ffff00; }
-}
-.footer-line span { display:inline-block; transition: all 0.3s ease; }
-</style>
-
 <script>
 // === Animaciones random para todas las líneas excepto developer y camaleon ===
 const animations = ['moveUp','moveDown','rotateLeft','rotateRight','scaleUp','scaleDown','blinkText'];
@@ -339,13 +338,13 @@ developerLine.addEventListener('mouseenter', () => {
   setTimeout(()=>{ developerLine.style.animation='footerGlow 3s ease-in-out infinite alternate'; },3000);
 });
 
-// Camaleón line arreglada
+// === Camaleón line arreglada ===
 const camaleonLine = document.getElementById('camaleon-line');
 const text = camaleonLine.textContent;
-camaleonLine.innerHTML = ''; // limpia
+camaleonLine.innerHTML = '';
 for(let char of text){
   if(char === ' '){
-    camaleonLine.appendChild(document.createTextNode(' ')); // deja espacios sin span
+    camaleonLine.appendChild(document.createTextNode(' '));
   } else {
     const span = document.createElement('span');
     span.textContent = char;
@@ -356,17 +355,21 @@ for(let char of text){
 camaleonLine.addEventListener('mouseenter', () => {
   const spans = camaleonLine.querySelectorAll('span');
   spans.forEach((span,i) => {
-    // puedes añadir un delay random por letra para efecto camaleón más dinámico
-    span.style.animation = `camaleon 1.2s ease-in-out 1 forwards`;
+    span.style.animation = `camaleon 1.2s ease-in-out infinite`;
     span.style.animationDelay = `${i*0.05}s`;
   });
-  setTimeout(()=>{
-    spans.forEach(span=>span.style.animation='');
-  },1500);
 });
 
-<script>
-/* Scroll Reveal */
+camaleonLine.addEventListener('mouseleave', () => {
+  const spans = camaleonLine.querySelectorAll('span');
+  spans.forEach(span=>{
+    span.style.animation = '';
+    span.style.transform = '';
+    span.style.color = '';
+  });
+});
+
+// === Scroll Reveal ===
 function revealOnScroll(){
   const reveals=document.querySelectorAll('.reveal');
   for(const el of reveals){
@@ -380,7 +383,7 @@ function revealOnScroll(){
 window.addEventListener('scroll',revealOnScroll);
 window.addEventListener('load',revealOnScroll);
 
-/* Language Toggle */
+// === Language Toggle ===
 let currentLang="en";
 function toggleLang(){
   if(currentLang==="en"){
@@ -400,7 +403,7 @@ function toggleLang(){
   }
 }
 
-/* Animated Tab Title */
+// === Animated Tab Title ===
 const titles=[
 "GRAVITY MTB",
 "DH/Enduro Experience",
@@ -409,18 +412,18 @@ const titles=[
 ];
 let index=0;
 setInterval(()=>{
-document.title=titles[index];
-index=(index+1)%titles.length;
+  document.title=titles[index];
+  index=(index+1)%titles.length;
 },2500);
 
-/* Tab Leave Message */
+// === Tab Leave Message ===
 const originalTitle=document.title;
 document.addEventListener("visibilitychange",function(){
-if(document.hidden){
-document.title="The Mountain Awaits";
-}else{
-document.title=originalTitle;
-}
+  if(document.hidden){
+    document.title="The Mountain Awaits";
+  }else{
+    document.title=originalTitle;
+  }
 });
 </script>
 
