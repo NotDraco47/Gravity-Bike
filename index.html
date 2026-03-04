@@ -249,12 +249,62 @@ footer{
   </div>
 </section>
 
-<footer>
+<footer class="cinematic-footer">
   <p>Developed by notdraco47</p>
   <p>© 2026 GRAVITY MTB. All Rights Reserved.</p>
   <p>© 2026 GRAVITY Bike. All Rights Reserved.</p>
-  <p> This Site its protected by DMCA.com and International Laws </p>
+  <p>Protected by DMCA.com and international copyright laws</p>
 </footer>
+
+<style>
+/* Footer estilo cinemático */
+.cinematic-footer{
+  text-align: center;
+  color: #00ff88;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  padding: 50px 20px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.3s;
+  text-shadow: 0 0 8px #00ff88, 0 0 15px #00ff88, 0 0 20px #00ff88;
+}
+
+/* Glow animado tipo neon */
+@keyframes footerGlow{
+  0%{text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88;}
+  50%{text-shadow: 0 0 15px #00ff88, 0 0 30px #00ff88, 0 0 40px #00ff88;}
+  100%{text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88;}
+}
+.cinematic-footer{
+  animation: footerGlow 3s ease-in-out infinite alternate;
+}
+
+/* Hover Easter Egg */
+.cinematic-footer:hover{
+  animation: footerHover 1.5s ease-in-out forwards;
+}
+
+/* Animación hover */
+@keyframes footerHover{
+  0% { transform: scale(1) rotate(0deg); opacity: 1;}
+  25%{ transform: scale(1.05) rotate(1deg); opacity: 0.9;}
+  50%{ transform: scale(1.1) rotate(-1deg); opacity: 1;}
+  75%{ transform: scale(1.05) rotate(1deg); opacity: 0.95;}
+  100%{ transform: scale(1) rotate(0deg); opacity: 1;}
+}
+
+/* Opcional: cada p puede parpadear individualmente al hover */
+.cinematic-footer:hover p{
+  animation: blinkText 0.6s ease-in-out 3;
+}
+
+@keyframes blinkText{
+  0%,100%{opacity:1;}
+  50%{opacity:0.2;}
+}
+</style>
 
 <script>
 /* Scroll Reveal */
