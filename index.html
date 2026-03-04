@@ -339,30 +339,31 @@ developerLine.addEventListener('mouseenter', () => {
   setTimeout(()=>{ developerLine.style.animation='footerGlow 3s ease-in-out infinite alternate'; },3000);
 });
 
-// === Camaleón line ===
+// Camaleón line arreglada
 const camaleonLine = document.getElementById('camaleon-line');
 const text = camaleonLine.textContent;
-camaleonLine.innerHTML = '';
+camaleonLine.innerHTML = ''; // limpia
 for(let char of text){
-  const span = document.createElement('span');
-  span.textContent = char;
-  camaleonLine.appendChild(span);
+  if(char === ' '){
+    camaleonLine.appendChild(document.createTextNode(' ')); // deja espacios sin span
+  } else {
+    const span = document.createElement('span');
+    span.textContent = char;
+    camaleonLine.appendChild(span);
+  }
 }
 
 camaleonLine.addEventListener('mouseenter', () => {
   const spans = camaleonLine.querySelectorAll('span');
-  spans.forEach(span => {
+  spans.forEach((span,i) => {
+    // puedes añadir un delay random por letra para efecto camaleón más dinámico
     span.style.animation = `camaleon 1.2s ease-in-out 1 forwards`;
+    span.style.animationDelay = `${i*0.05}s`;
   });
-  setTimeout(()=>{ spans.forEach(span=>span.style.animation=''); },1200);
+  setTimeout(()=>{
+    spans.forEach(span=>span.style.animation='');
+  },1500);
 });
-</script>
-
-@keyframes blinkText{
-  0%,100%{opacity:1;}
-  50%{opacity:0.2;}
-}
-</style>
 
 <script>
 /* Scroll Reveal */
