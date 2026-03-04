@@ -1,12 +1,12 @@
-# Gravity-Bike
+# Gravity-Bike & Gravity MTB
 Copyright (c) 2026 Notdraco47
 All Rights Reserved.
 
 1. OWNERSHIP
 
-Gravity Bikes, including but not limited to its concept, gameplay systems, mechanics,
+Gravity Bikes And Gravity MTB, including but not limited to its concept, gameplay systems, mechanics,
 design, branding, visual identity, narrative elements, philosophy, and associated
-assets, is the intellectual property of the original creator ("YourAlias").
+assets, is the intellectual property of the original creator ("Notdraco47").
 
 This project represents independent creative work inspired by the sport of downhill
 mountain biking.
@@ -26,7 +26,7 @@ You are NOT permitted to:
 - Reupload this project as your own work.
 - Claim authorship of any part of this project.
 - Monetize modified or unmodified versions without explicit written permission.
-- Use the "Gravity Bikes" name, logo, branding, or identity in derivative
+- Use the "Gravity Bikes" and "Gravity MTB" name, logo, branding, or identity in derivative
   commercial projects.
 - Sell, sublicense, or redistribute this project in any commercial form.
 
@@ -50,7 +50,7 @@ notdraco23@gmail.com
 
 6. PHILOSOPHY CLAUSE
 
-Gravity Bikes was created to represent downhill mountain biking with authenticity,
+Gravity Bikes and Gravity MTB was created to represent downhill mountain biking with authenticity,
 respect, and passion. Any inspired or derivative work should preserve values of
 sportsmanship, creativity, and positive community impact.
 
