@@ -1,1 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRAVITY MTB — Legal</title>
 
+<link rel="icon" href="../Logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Montserrat',sans-serif;
+  background:#000;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* Cinematic Background */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+  linear-gradient(rgba(0,0,0,0.88), rgba(0,0,0,0.96)),
+  url('../Logo.png') center/50% no-repeat;
+  z-index:-1;
+  animation:backgroundMove 20s ease-in-out infinite;
+}
+
+@keyframes backgroundMove{
+  0%{transform:translateY(0px) scale(1)}
+  50%{transform:translateY(-30px) scale(1.05)}
+  100%{transform:translateY(0px) scale(1)}
+}
+
+header{
+  position:fixed;
+  width:100%;
+  padding:20px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter:blur(14px);
+  z-index:1000;
+}
+
+.logo-link img{
+  height:45px;
+  opacity:0.9;
+  transition:0.3s;
+}
+
+.logo-link img:hover{
+  transform:scale(1.08);
+  opacity:1;
+}
+
+.lang-toggle{
+  background:#00ff88;
+  border:none;
+  padding:8px 16px;
+  font-weight:700;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+main{
+  padding:180px 10% 120px 10%;
+  text-align:center;
+}
+
+h1{
+  font-size:3.5rem;
+  margin-bottom:60px;
+  font-weight:900;
+  letter-spacing:3px;
+  text-shadow:0 0 20px #00ff88;
+}
+
+p{
+  max-width:1000px;
+  margin:0 auto 28px auto;
+  line-height:2;
+  font-size:1.05rem;
+  opacity:0.92;
+}
+
+.hidden{display:none}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="../index.html" class="logo-link">
+    <img src="../Logo.png" alt="GRAVITY MTB Logo">
+  </a>
+
+  <button class="lang-toggle" onclick="toggleLang()">ES</button>
+</header>
+
+<main>
+
+<h1>Copyright & Legal Actions</h1>
+
+<div id="en-content">
+<p>
+GRAVITY MTB™, including but not limited to its name, visual identity, logo, design elements, written content, game mechanics, digital assets, branding structure, audiovisual material, source code, promotional media, and all related intellectual creations, constitutes original proprietary work and is protected under applicable international copyright laws and digital protection statutes.
+</p>
+
+<p>
+All content associated with GRAVITY MTB is formally registered and monitored under the Digital Millennium Copyright Act (DMCA) and related international intellectual property enforcement frameworks. Unauthorized reproduction, redistribution, modification, reverse engineering, decompilation, imitation, derivative adaptation, asset extraction, branding replication, or commercial exploitation of any portion of this project without explicit written authorization from the legal owner is strictly prohibited.
+</p>
+
+<p>
+This protection extends to the official website, the Roblox game environment, in-game systems, map structures, UI design, gameplay concepts, progression systems, physics tuning, branding architecture, and all associated community platforms. Any attempt to copy, mirror, clone, simulate, or commercially benefit from the GRAVITY MTB intellectual property will be considered a direct infringement and may result in immediate legal enforcement actions.
+</p>
+
+<p>
+Licensing or acquisition rights for the use, adaptation, distribution, or partnership involving GRAVITY MTB must be negotiated directly with the legal owner and original developer. No third party is authorized to grant permissions, sublicenses, or derivative rights under any circumstance.
+</p>
+
+<p>
+The owner reserves the full right to initiate DMCA takedown procedures, formal platform complaints, account suspensions, content removal actions, civil litigation claims, and international enforcement proceedings when necessary. Evidence of infringement may be documented, archived, and presented to relevant hosting providers, digital platforms, or legal authorities.
+</p>
+
+<p>
+By accessing this website or interacting with the GRAVITY MTB project in any form, you acknowledge and accept these protections and understand that all rights are reserved exclusively by the creator.
+</p>
+</div>
+
+<div id="es-content" class="hidden">
+<p>
+GRAVITY MTB™, incluyendo pero no limitado a su nombre, identidad visual, logotipo, elementos de diseño, contenido escrito, mecánicas de juego, activos digitales, estructura de marca, material audiovisual, código fuente y todas las creaciones intelectuales relacionadas, constituye una obra original protegida por leyes internacionales de derechos de autor y normativas digitales vigentes.
+</p>
+
+<p>
+Todo el contenido asociado a GRAVITY MTB se encuentra formalmente registrado y monitoreado bajo la Digital Millennium Copyright Act (DMCA) y marcos internacionales de protección de propiedad intelectual. Queda estrictamente prohibida la reproducción, redistribución, modificación, ingeniería inversa, descompilación, imitación, adaptación derivada, extracción de activos o explotación comercial sin autorización expresa y por escrito del propietario legal.
+</p>
+
+<p>
+Esta protección se extiende al sitio web oficial, al entorno del juego en Roblox, sistemas internos, mapas, interfaz, conceptos de jugabilidad, progresión, ajustes de física y arquitectura de marca. Cualquier intento de copia, clonación o simulación será considerado infracción directa y podrá derivar en acciones legales inmediatas.
+</p>
+
+<p>
+La adquisición de licencias o derechos de uso deberá negociarse exclusivamente con el propietario y desarrollador original. Ningún tercero está autorizado para otorgar permisos o sublicencias.
+</p>
+
+<p>
+El propietario se reserva el derecho de iniciar procesos de retiro DMCA, reclamos formales ante plataformas, suspensiones de cuentas, eliminación de contenido y acciones legales internacionales cuando corresponda.
+</p>
+
+<p>
+Al acceder a este sitio web o interactuar con el proyecto GRAVITY MTB, usted reconoce y acepta estas condiciones y entiende que todos los derechos están estrictamente reservados.
+</p>
+</div>
+
+</main>
+
+<script>
+let currentLang="en";
+function toggleLang(){
+  if(currentLang==="en"){
+    document.getElementById("en-content").classList.add("hidden");
+    document.getElementById("es-content").classList.remove("hidden");
+    document.querySelector(".lang-toggle").innerText="EN";
+    currentLang="es";
+  }else{
+    document.getElementById("en-content").classList.remove("hidden");
+    document.getElementById("es-content").classList.add("hidden");
+    document.querySelector(".lang-toggle").innerText="ES";
+    currentLang="en";
+  }
+}
+</script>
+
+</body>
+</html>
