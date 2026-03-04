@@ -21,16 +21,16 @@ body::before{
   content:"";
   position:fixed;
   inset:0;
-  background:url('Logo.png') center/35% no-repeat;
-  opacity:0.06;
+  background:url('Logo.png') center/40% no-repeat;
+  opacity:0.05;
   z-index:-1;
-  animation:floatLogo 12s ease-in-out infinite;
+  animation:backgroundMove 18s ease-in-out infinite;
 }
 
-@keyframes floatLogo{
-  0%{transform:translateY(0px)}
-  50%{transform:translateY(-20px)}
-  100%{transform:translateY(0px)}
+@keyframes backgroundMove{
+  0%{transform:translateY(0px) scale(1)}
+  50%{transform:translateY(-25px) scale(1.05)}
+  100%{transform:translateY(0px) scale(1)}
 }
 
 nav{
@@ -40,7 +40,7 @@ nav{
   padding:18px 0;
   text-align:center;
   z-index:1000;
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(14px);
 }
 
 nav a{
@@ -70,7 +70,7 @@ nav a:hover{
 
 section{
   min-height:100vh;
-  padding:140px 10% 80px 10%;
+  padding:150px 10% 100px 10%;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -78,85 +78,92 @@ section{
   text-align:center;
 }
 
-.fade-in{
+.reveal{
   opacity:0;
-  transform:translateY(40px);
-  animation:fadeUp 1.2s ease forwards;
+  transform:translateY(60px);
+  transition:1s ease;
 }
 
-@keyframes fadeUp{
-  to{opacity:1;transform:translateY(0)}
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
 }
 
 h1{
-  font-size:4.8rem;
+  font-size:5rem;
   font-weight:900;
-  margin-bottom:20px;
-  letter-spacing:3px;
-  animation:glow 3s ease-in-out infinite alternate;
+  letter-spacing:4px;
+  margin-bottom:25px;
+  animation:titleGlow 3s ease-in-out infinite alternate;
 }
 
-@keyframes glow{
+@keyframes titleGlow{
   from{text-shadow:0 0 10px #00ff88}
-  to{text-shadow:0 0 25px #00ff88}
+  to{text-shadow:0 0 30px #00ff88}
 }
 
-h2{font-size:3rem;margin-bottom:30px}
+h2{
+  font-size:3rem;
+  margin-bottom:40px;
+}
 
 p{
-  max-width:900px;
-  line-height:1.9;
-  margin-bottom:22px;
-  font-size:1.05rem;
+  max-width:950px;
+  line-height:2;
+  margin-bottom:28px;
+  font-size:1.08rem;
   opacity:0.9;
 }
 
 .button{
-  padding:15px 35px;
+  padding:16px 38px;
   background:#00ff88;
   color:black;
   font-weight:700;
   text-decoration:none;
-  border-radius:30px;
+  border-radius:40px;
   transition:0.3s;
-  margin-top:25px;
+  margin-top:30px;
 }
 
 .button:hover{
   background:white;
-  transform:scale(1.08);
+  transform:scale(1.1);
 }
 
-/* Discord Card */
-.discord-card{
+.discord-container{
   background:rgba(255,255,255,0.05);
-  padding:40px;
-  border-radius:25px;
-  box-shadow:0 0 40px rgba(0,255,136,0.2);
-  backdrop-filter:blur(15px);
-  transition:0.4s;
+  padding:50px;
+  border-radius:30px;
+  box-shadow:0 0 60px rgba(0,255,136,0.25);
+  backdrop-filter:blur(18px);
+  transition:0.5s;
 }
 
-.discord-card:hover{
-  transform:scale(1.03);
-  box-shadow:0 0 60px rgba(0,255,136,0.4);
+.discord-container:hover{
+  transform:scale(1.04);
+  box-shadow:0 0 80px rgba(0,255,136,0.45);
+}
+
+.discord-header{
+  font-size:1.5rem;
+  font-weight:700;
+  margin-bottom:20px;
 }
 
 iframe{
   border-radius:20px;
-  margin-top:20px;
 }
 
 footer{
-  padding:60px 20px;
-  background:#000;
+  padding:70px 20px;
   text-align:center;
-  font-size:0.95rem;
   color:#aaa;
+  font-size:1rem;
 }
 
 footer p{
-  margin:8px 0;
+  margin:10px 0;
 }
 
 .hidden{display:none}
@@ -174,121 +181,124 @@ footer p{
 </nav>
 
 <section id="home">
-  <h1 class="fade-in">GRAVITY BIKES</h1>
-  <p id="home-text-en" class="fade-in">A world-class downhill mountain biking experience built to inspire riders worldwide.</p>
-  <p id="home-text-es" class="hidden fade-in">Una experiencia de downhill creada para inspirar riders en todo el mundo.</p>
-  <a href="#about" class="button fade-in">Discover The Vision</a>
+  <h1 class="reveal">GRAVITY BIKES</h1>
+  <p id="home-text-en" class="reveal">A digital gateway into the world of downhill mountain biking.</p>
+  <p id="home-text-es" class="hidden reveal">Una puerta digital hacia el mundo del downhill y el mountain bike.</p>
+  <a href="#about" class="button reveal">Explore The Vision</a>
 </section>
 
 <section id="about">
   <h2>About The Game</h2>
-
   <div id="about-en">
-    <p>Gravity Bikes was not created simply to entertain. It was created to represent something real. Downhill mountain biking is not just speed and jumps. It is commitment, discipline, fear management, progression, and respect for the mountain. This game was built to transmit that feeling to people who may have never touched a bike or stood at the top of a descent.</p>
+    <p class="reveal">Gravity Bikes was created with a clear purpose: to introduce people to the culture, discipline, and mindset of mountain biking and downhill riding. This is not just about speed or virtual tricks. It is about understanding what it feels like to stand at the top of a descent and commit.</p>
 
-    <p>The mission behind this project is clear: introduce mountain biking and downhill culture to a global audience. Regardless of nationality, age, or background, anyone can understand what it means to face a challenge and push past it. Even though the experience lives inside Roblox, the spirit behind it comes from real trails, real terrain, and real riding culture.</p>
+    <p class="reveal">The game serves as a bridge between the digital world and the mountains. Many players may never have experienced a real trail, the sound of tires on dirt, or the silence before dropping into a line. Gravity Bikes is designed to awaken that curiosity and make players want to experience it beyond the screen.</p>
 
-    <p>Every track is designed with intention. Lines are shaped to encourage flow, control, and decision‑making. Sections demand precision rather than randomness. The goal is not arcade chaos, but progression. Riders must learn the terrain, adjust their speed, control their momentum, and commit when it matters. That process mirrors real downhill riding.</p>
+    <p class="reveal">Each track is inspired by real trail design principles. Flow, rhythm, terrain reading, braking control, and line choice are intentionally represented. Progress comes from learning the course, understanding speed management, and improving with every run. That progression reflects real downhill riding.</p>
 
-    <p>Beyond gameplay mechanics, Gravity Bikes carries a deeper message. It exists to spark curiosity. To create the moment when someone thinks: “I want to try this in real life.” The game is an introduction — a bridge between digital experience and real‑world passion. It shows that mountain biking builds confidence, resilience, patience, and mental strength.</p>
+    <p class="reveal">The deeper message is simple but powerful: mountain biking builds resilience. It teaches that falling is part of improvement, that fear can be managed, and that growth requires patience. Through gameplay, players are exposed to these values in a subtle but meaningful way.</p>
 
-    <p>Downhill teaches you that falling is part of growth. That fear is natural, but controllable. That progress does not come overnight. These values are embedded into the philosophy of the project. Gravity Bikes is a tribute to the sport and an invitation to discover what it feels like to trust yourself at the edge of gravity.</p>
-
-    <p>This is more than a game. It is a statement that powerful ideas are not limited by platform. Passion translates. Vision translates. And sometimes, a virtual descent can be the first step toward a real mountain.</p>
+    <p class="reveal">Even though the platform is Roblox, the vision is global. The sport belongs to no single country or age group. It belongs to anyone willing to challenge themselves. If this game motivates someone to search for a local trail, rent a bike, or simply believe they are capable of more, then its purpose is fulfilled.</p>
   </div>
 
   <div id="about-es" class="hidden">
-    <p>Gravity Bikes no fue creado simplemente para entretener. Fue creado para representar algo real. El downhill no es solo velocidad y saltos. Es compromiso, disciplina, control del miedo, progresión y respeto por la montaña. Este juego fue diseñado para transmitir esa sensación a personas que quizás nunca han tomado una bicicleta o estado en la cima de una bajada.</p>
+    <p class="reveal">Gravity Bikes fue creado con un propósito claro: acercar la cultura, la disciplina y la mentalidad del mountain bike y del downhill a nuevas personas. No se trata solo de velocidad o trucos virtuales. Se trata de comprender lo que significa estar en la cima de una bajada y decidir lanzarse con convicción.</p>
 
-    <p>La misión del proyecto es clara: introducir la cultura del ciclismo de montaña y del downhill a una audiencia global. Sin importar la nacionalidad, la edad o el contexto, cualquiera puede entender lo que significa enfrentarse a un desafío y superarlo. Aunque la experiencia exista dentro de Roblox, el espíritu que la impulsa nace de senderos reales, terreno real y cultura rider auténtica.</p>
+    <p class="reveal">El juego funciona como un puente entre el mundo digital y la montaña real. Muchos jugadores quizá nunca han sentido el sonido de las ruedas sobre la tierra ni el silencio previo a una línea técnica. Gravity Bikes busca despertar esa curiosidad y generar el deseo de vivir la experiencia más allá de la pantalla.</p>
 
-    <p>Cada pista está diseñada con intención. Las líneas buscan generar fluidez, control y toma de decisiones. Las secciones exigen precisión y lectura del terreno, no caos aleatorio. El objetivo no es una experiencia arcade sin profundidad, sino progresión. El jugador debe aprender el circuito, ajustar su velocidad, controlar la inercia y comprometerse cuando el momento lo exige. Ese proceso refleja el verdadero downhill.</p>
+    <p class="reveal">Cada pista está diseñada bajo principios reales de construcción de senderos: fluidez, ritmo, lectura del terreno, control de frenado y elección de líneas. La progresión surge al aprender el circuito, administrar la velocidad y mejorar en cada intento. Esa evolución refleja el verdadero downhill.</p>
 
-    <p>Más allá de la jugabilidad, Gravity Bikes transmite un mensaje profundo. Busca despertar curiosidad. Crear ese instante en el que alguien piense: “Quiero intentar esto en la vida real”. El juego funciona como una puerta de entrada, un puente entre la experiencia digital y la pasión real. Demuestra que el mountain bike desarrolla confianza, resiliencia, paciencia y fortaleza mental.</p>
+    <p class="reveal">El mensaje profundo es claro: el mountain bike construye resiliencia. Enseña que las caídas son parte del proceso, que el miedo se puede gestionar y que el crecimiento requiere paciencia. A través de la jugabilidad, estos valores se transmiten de manera natural y significativa.</p>
 
-    <p>El downhill enseña que caerse es parte del crecimiento. Que el miedo es natural, pero se puede controlar. Que el progreso no ocurre de un día para otro. Esos valores están integrados en la filosofía del proyecto. Gravity Bikes es un homenaje al deporte y una invitación a descubrir lo que se siente confiar en uno mismo al borde de la gravedad.</p>
-
-    <p>No es solo un juego. Es una declaración de que las grandes ideas no están limitadas por la plataforma. La pasión se transmite. La visión se transmite. Y a veces, una bajada virtual puede ser el primer paso hacia una montaña real.</p>
+    <p class="reveal">Aunque la plataforma sea Roblox, la visión es global. El deporte no pertenece a una sola nacionalidad ni a una edad específica. Pertenece a quien esté dispuesto a superarse. Si este juego motiva a alguien a buscar un sendero, arrendar una bicicleta o confiar más en sus capacidades, entonces habrá cumplido su objetivo.</p>
   </div>
 </section>
 
 <section id="creator">
   <h2>About The Creator</h2>
-
   <div id="creator-en">
-    <p><strong>Alias:</strong> notdraco47</p>
+    <p class="reveal"><strong>Alias:</strong> notdraco47</p>
 
-    <p>The foundation of this project began at eight years old, when a child first discovered mountain biking. What started as curiosity became identity. Riding trails, learning balance, crashing, getting back up — those experiences shaped more than skill. They shaped mindset.</p>
+    <p class="reveal">The journey began at eight years old with a mountain bike and a growing fascination for trails. What started as a childhood activity evolved into a deep commitment to the sport. Riding shaped discipline, mental strength, and the ability to confront fear with preparation.</p>
 
-    <p>As the years passed, downhill stopped being just a discipline and became a way of understanding life. Standing at the top of a descent teaches commitment. Once you drop in, hesitation disappears. You either trust your preparation or you do not. That philosophy carries into everything — including programming and creation.</p>
+    <p class="reveal">Over time, downhill became more than a category of riding. It became a philosophy. Standing at the top of a descent demands clarity and confidence. Once you commit, hesitation disappears. That mindset extends beyond biking into programming and creation.</p>
 
-    <p>Beyond being a rider, notdraco47 is also a creator and track builder. With real experience designing and shaping enduro and downhill trails in the hills of Chile, the knowledge behind Gravity Bikes is not theoretical. It comes from terrain, from elevation, from line choice, from understanding how flow is built and how challenge is structured.</p>
+    <p class="reveal">In Chile, notdraco47 has participated in designing and shaping enduro and downhill tracks across real hills and terrain. Understanding gradient, flow, technical sections, and safe progression is part of his real-world experience. Gravity Bikes reflects that practical knowledge.</p>
 
-    <p>This combination of rider and developer defines the project. Coding becomes another form of trail building. Instead of dirt and rock, the material is digital space. Instead of shovels, the tools are engines and scripts. But the philosophy remains the same: build something that challenges people, pushes progression, and respects the sport.</p>
+    <p class="reveal">As both rider and developer, coding becomes another form of trail building. Instead of shaping dirt, digital landscapes are constructed. Instead of tools and shovels, scripts and systems are used. The objective remains identical: create a challenging yet rewarding experience that respects the sport.</p>
 
-    <p>Gravity Bikes is independent. It was not backed by a studio or investors. It was built through persistence, self‑learning, and discipline — the same discipline learned on the bike. The message behind it is simple but powerful: everything is possible if you truly commit to it. Whether it is mastering a downhill line, building a real trail, or developing a game from scratch, progress belongs to those who refuse to quit.</p>
+    <p class="reveal">This project stands as proof that dedication transforms ideas into reality. Mastering a downhill line, building a real trail, or developing a game all follow the same principle: consistent effort and belief in your vision make everything possible.</p>
 
-    <p>If this project inspires even one person to try mountain biking, to explore a trail, or to believe more in their own potential, then it has achieved its purpose.</p>
-
-    <p>Contact: notdraco23@gmail.com</p>
+    <p class="reveal">Contact: notdraco23@gmail.com</p>
   </div>
 
   <div id="creator-es" class="hidden">
-    <p><strong>Alias:</strong> notdraco47</p>
+    <p class="reveal"><strong>Alias:</strong> notdraco47</p>
 
-    <p>La base de este proyecto comenzó a los ocho años, cuando descubrió el ciclismo de montaña. Lo que empezó como curiosidad se transformó en identidad. Rodar por senderos, aprender equilibrio, caer y volver a levantarse no solo formó habilidad técnica, sino carácter y mentalidad.</p>
+    <p class="reveal">El camino comenzó a los ocho años con una bicicleta y una fascinación creciente por los senderos. Lo que inició como una actividad de infancia se transformó en un compromiso profundo con el deporte. Rodar formó disciplina, fortaleza mental y la capacidad de enfrentar el miedo con preparación.</p>
 
-    <p>Con el tiempo, el downhill dejó de ser solo una modalidad y se convirtió en una forma de entender la vida. Estar en la cima de una bajada enseña compromiso. Una vez que te lanzas, la duda ya no tiene espacio. Confías en tu preparación o no lo haces. Esa filosofía se trasladó también al mundo de la programación y la creación.</p>
+    <p class="reveal">Con el tiempo, el downhill dejó de ser solo una modalidad y se convirtió en una filosofía. Estar en la cima de una bajada exige claridad y confianza. Una vez que decides lanzarte, la duda desaparece. Esa mentalidad también se aplica a la programación y a la creación.</p>
 
-    <p>Además de rider, notdraco47 es creador y diseñador de pistas. Con experiencia real construyendo y trazando rutas de enduro y downhill en cerros de Chile, el conocimiento detrás de Gravity Bikes nace del terreno auténtico: del desnivel, de la elección de líneas, del flujo natural que debe tener una pista bien diseñada.</p>
+    <p class="reveal">En Chile, notdraco47 ha participado en el diseño y construcción de rutas de enduro y downhill en cerros reales. Comprender el desnivel, la fluidez, las secciones técnicas y la progresión segura forma parte de su experiencia práctica. Gravity Bikes refleja ese conocimiento adquirido en terreno.</p>
 
-    <p>Esa combinación de rider y programador define el proyecto. Programar se convierte en otra forma de construir senderos. En lugar de tierra y roca, el material es espacio digital. En lugar de herramientas físicas, se utilizan motores y scripts. Pero la filosofía es la misma: crear algo que desafíe, que impulse la progresión y que respete el deporte.</p>
+    <p class="reveal">Como rider y programador, el desarrollo se convierte en otra forma de construir pistas. En lugar de moldear tierra, se diseñan paisajes digitales. En vez de herramientas físicas, se utilizan sistemas y código. El objetivo es el mismo: crear una experiencia desafiante, gratificante y respetuosa con el deporte.</p>
 
-    <p>Gravity Bikes es un proyecto independiente. No fue financiado por estudios ni inversionistas. Fue desarrollado con constancia, aprendizaje autodidacta y disciplina — la misma disciplina que se aprende sobre la bicicleta. El mensaje es claro: todo es posible si realmente te lo propones. Ya sea dominar una línea de downhill, construir una pista real o desarrollar un juego desde cero, el progreso pertenece a quienes no se rinden.</p>
+    <p class="reveal">Este proyecto demuestra que la dedicación convierte una idea en realidad. Dominar una línea de downhill, construir un sendero real o desarrollar un juego comparten el mismo principio: esfuerzo constante y convicción hacen que todo sea posible.</p>
 
-    <p>Si este proyecto logra inspirar хотя sea a una persona a probar el mountain bike, explorar un sendero o creer más en su propio potencial, entonces habrá cumplido su propósito.</p>
-
-    <p>Contacto: notdraco23@gmail.com</p>
+    <p class="reveal">Contacto: notdraco23@gmail.com</p>
   </div>
 </section>
 
 <section id="discord">
-  <h2>Official Community</h2>
-  <div class="discord-card">
+  <h2>Community</h2>
+  <div class="discord-container reveal">
+    <div class="discord-header">Join the Official Gravity Bikes Community</div>
     <iframe src="https://discord.com/widget?id=1478516758775333096&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
   </div>
 </section>
 
 <footer>
-  <p>Designer & Developer: notdraco47</p>
+  <p>Designer and Developer: notdraco47</p>
   <p>© 2026 Gravity Bikes. All Rights Reserved.</p>
 </footer>
 
 <script>
-let currentLang = "en";
+let currentLang="en";
 function toggleLang(){
-  if(currentLang === "en"){
+  if(currentLang==="en"){
     document.getElementById("about-en").classList.add("hidden");
     document.getElementById("creator-en").classList.add("hidden");
     document.getElementById("home-text-en").classList.add("hidden");
     document.getElementById("about-es").classList.remove("hidden");
     document.getElementById("creator-es").classList.remove("hidden");
     document.getElementById("home-text-es").classList.remove("hidden");
-    document.querySelector(".lang-toggle").innerText = "EN";
-    currentLang = "es";
-  } else {
+    document.querySelector(".lang-toggle").innerText="EN";
+    currentLang="es";
+  }else{
     document.getElementById("about-en").classList.remove("hidden");
     document.getElementById("creator-en").classList.remove("hidden");
     document.getElementById("home-text-en").classList.remove("hidden");
     document.getElementById("about-es").classList.add("hidden");
     document.getElementById("creator-es").classList.add("hidden");
     document.getElementById("home-text-es").classList.add("hidden");
-    document.querySelector(".lang-toggle").innerText = "ES";
-    currentLang = "en";
+    document.querySelector(".lang-toggle").innerText="ES";
+    currentLang="en";
   }
 }
+
+function revealOnScroll(){
+  const reveals=document.querySelectorAll('.reveal');
+  for(const el of reveals){
+    const windowHeight=window.innerHeight;
+    const elementTop=el.getBoundingClientRect().top;
+    if(elementTop<windowHeight-100){
+      el.classList.add('active');
+    }
+  }
+}
+window.addEventListener('scroll',revealOnScroll);
+window.addEventListener('load',revealOnScroll);
 </script>
 
 </body>
 </html>
-
